@@ -5,8 +5,164 @@ body {
   font-family: Roboto, Arial, sans-serif;
   overflow-x: hidden;
 }
+/* Mobile Responsive for Login & Register */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 15px !important;
+        align-items: flex-start !important; /* Mobile par top se start ho */
+        padding-top: 50px !important;
+    }
 
-/* --- Navbar Fixed Layout --- */
+    .login-box {
+        flex-direction: column !important; /* Image upar aur form niche */
+        width: 100% !important;
+        height: auto !important;
+        min-height: unset !important;
+        border-radius: 8px !important;
+    }
+
+    /* Blue side wala portion mobile par chhota dikhega */
+    .login-left {
+        width: 100% !important;
+        padding: 30px 20px !important;
+        text-align: center !important;
+    }
+
+    .login-left h2 {
+        font-size: 22px !important;
+    }
+
+    .login-left p {
+        font-size: 14px !important;
+    }
+
+    .login-left img {
+        display: none !important; /* Mobile par space bachane ke liye image hide */
+    }
+
+    /* White side (Form area) */
+    .login-right {
+        width: 100% !important;
+        padding: 30px 20px !important;
+    }
+
+    .input-group input {
+        padding: 12px !important;
+        font-size: 14px !important;
+    }
+
+    .login-btn {
+        width: 100% !important;
+        padding: 12px !important;
+        margin-top: 10px !important;
+    }
+
+    .login-footer {
+        text-align: center !important;
+        margin-top: 20px !important;
+    }
+
+    /* Background circles ko chhota ya hide karein mobile par */
+    .bg-circle {
+        display: none !important;
+    }
+}
+/* ✅ FIXED: Mobile Responsiveness ✅ */
+@media (max-width: 768px) {
+    /* 1. Navbar Adjustment */
+    .navbar-fixed {
+        height: auto !important;
+        padding: 10px 0 !important;
+    }
+
+    .nav-container {
+        flex-direction: column !important;
+        gap: 10px !important;
+        width: 95% !important;
+    }
+
+    /* 2. Login Button & Icons - Horizontal Alignment */
+    .nav-actions {
+        display: flex !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        order: 2 !important; /* Logo ke baad dikhega */
+    }
+
+    /* Search bar ko niche aur bada karein */
+    .search-section {
+        order: 3 !important;
+        width: 100% !important;
+        margin: 5px 0 !important;
+    }
+
+    /* 3. Categories Icons - Horizontal Scroll */
+    .categories-container-inner {
+        overflow-x: auto !important;
+        display: flex !important;
+        padding: 10px 5px !important;
+        gap: 15px !important;
+        scrollbar-width: none; /* Hide scrollbar for clean look */
+    }
+
+    .cat-item-new {
+        min-width: 70px !important;
+        text-align: center !important;
+    }
+
+    .cat-item-new img {
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    /* 4. Sale Banner Fix */
+    .banner-glass-slider {
+        margin: 10px 0 !important;
+        border-radius: 8px !important;
+    }
+
+    .banner-img-main {
+        height: 180px !important; /* Mobile par chhota banner */
+        object-fit: cover !important;
+    }
+
+    .offer-badge-timer {
+        font-size: 11px !important;
+        padding: 4px 8px !important;
+    }
+
+    /* 5. Product Grid - 2 per row (Flipkart Style) */
+    .product-grid-vertical {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+        padding: 10px !important;
+    }
+
+    .product-card-v {
+        padding: 8px !important;
+    }
+
+    .img-box-v {
+        height: 140px !important;
+    }
+
+    /* 6. Filter Buttons Fix */
+    .modern-filter-bar {
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        padding: 10px !important;
+    }
+
+    .filter-chips {
+        display: flex !important;
+        gap: 8px !important;
+    }
+
+    .filter-chips button {
+        padding: 6px 15px !important;
+        font-size: 12px !important;
+    }
+}
 .navbar-fixed {
   background-color: #2874f0;
   height: 64px;
