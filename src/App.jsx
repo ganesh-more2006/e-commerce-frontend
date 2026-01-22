@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Routes, Route, Link, useNavigate } from "react-router-dom";
+import { Routes, Route, Link, useNavigate, useLocation } from "react-router-dom";
 import Swal from 'sweetalert2'; 
+import { FaHome, FaUser, FaShoppingBag, FaSearch, FaHeart } from "react-icons/fa";
 import { productsData, categoriesList } from "./productsData"; 
 import "./App.css";
 import Cart from "./Cart";
@@ -14,6 +15,7 @@ import FooterInfoPage from "./FooterInfoPage";
 
 function App() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [cart, setCart] = useState([]);
@@ -38,6 +40,7 @@ function App() {
   });
 
   const isAdmin = user && user.email === "krishna23@2006";
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const savedCart = localStorage.getItem("ganeshCart");
@@ -132,8 +135,7 @@ function App() {
         <div className="categories-wrapper-new">
           <div className="categories-container-inner">
             <div className={`cat-item-new ${selectedCategory === "All" ? "cat-active" : ""}`} onClick={() => setSelectedCategory("All")}>
-                <img src="https://imgs.search.brave.com/vWK1-2VeKFxI0x8e31g3HKSV3FvzRHuC-TMv8WE5QAg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZy/ZWVwaWsuY29tLzI1/Ni81MTEwLzUxMTA3/ODUucG5nP3NlbXQ9/YWlzX3doaXRlX2xh/YmVs
-" alt="all" />
+                <img src="https://imgs.search.brave.com/vWK1-2VeKFxI0x8e31g3HKSV3FvzRHuC-TMv8WE5QAg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZy/ZWVwaWsuY29tLzI1/Ni81MTEwLzUxMTA3/ODUucG5nP3NlbXQ9/YWlzX3doaXRlX2xh/YmVs" alt="all" />
                 <span>All</span>
             </div>
             {categoriesList.map((cat, i) => (
@@ -248,28 +250,29 @@ function App() {
                 <span className="brand-name-g">Ganesh</span>
                 <span className="brand-sub-plus">Shop</span>
             </div>
-            <p className="brand-tagline">India's Ultimate Shopping Destination</p>
           </div>
           
-          <div className="search-section" style={{position: 'relative'}}>
-            <input type="text" placeholder="Search for products, brands and more" value={searchQuery} onChange={handleSearchChange} />
-            <button className="search-btn">🔍</button>
-            {suggestions.length > 0 && (
-              <div className="suggestions-box">
-                {suggestions.map((p) => (
-                  <div key={p.id} className="suggestion-item" onClick={() => handleSuggestionClick(p)}>
-                    <img src={p.img} alt={p.name} className="suggestion-img" />
-                    <span className="suggestion-text">{p.name}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
+          {isHomePage && (
+            <div className="search-section desktop-search" style={{position: 'relative'}}>
+              <input type="text" placeholder="Search for products, brands and more" value={searchQuery} onChange={handleSearchChange} />
+              <button className="search-btn">🔍</button>
+              {suggestions.length > 0 && (
+                <div className="suggestions-box">
+                  {suggestions.map((p) => (
+                    <div key={p.id} className="suggestion-item" onClick={() => handleSuggestionClick(p)}>
+                      <img src={p.img} alt={p.name} className="suggestion-img" />
+                      <span className="suggestion-text">{p.name}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
 
           <div className="nav-actions">
             {user ? (
               <div className="user-nav-dropdown">
-                <span className="user-name">Hi, {user.name} ▼</span>
+                <span className="user-name">Hi, {user.name.split(' ')[0]} ▼</span>
                 <div className="dropdown-links">
                    <Link to="/profile">My Profile</Link>
                    <Link to="/history">My Orders</Link>
@@ -280,10 +283,18 @@ function App() {
             ) : (
               <Link to="/login" className="login-link-new">Login</Link>
             )}
-            <Link to="/seller" className="nav-seller-link hide-mobile">Become a Seller</Link>
-            <Link to="/cart" className="cart-link-nav">🛒 Cart ({cart.length})</Link>
+            <Link to="/cart" className="cart-link-nav hide-mobile">🛒 Cart ({cart.length})</Link>
           </div>
         </div>
+
+        {isHomePage && (
+          <div className="mobile-search-bar">
+            <div className="m-search-box">
+               <input type="text" placeholder="Search for products..." value={searchQuery} onChange={handleSearchChange} />
+               <FaSearch className="m-search-icon" />
+            </div>
+          </div>
+        )}
       </header>
 
       <main className="page-body">
@@ -300,55 +311,53 @@ function App() {
         </Routes>
       </main>
 
-<footer className="footer-section">
+      <nav className="bottom-nav">
+        <div className={`nav-item ${location.pathname === "/" ? "active" : ""}`} onClick={() => navigate("/")}>
+          <FaHome />
+          <span>Home</span>
+        </div>
+        <div className="nav-item">
+          <FaHeart />
+          <span>Wishlist</span>
+        </div>
+        <div className={`nav-item ${location.pathname === "/cart" ? "active" : ""}`} onClick={() => navigate("/cart")}>
+          <FaShoppingBag />
+          <span>Cart</span>
+        </div>
+        <div className={`nav-item ${location.pathname === "/login" || location.pathname === "/profile" ? "active" : ""}`} onClick={() => (user ? navigate("/profile") : navigate("/login"))}>
+          <FaUser />
+          <span>Account</span>
+        </div>
+      </nav>
+
+      <footer className="footer-section">
         <div className="footer-inner">
           <div className="footer-col">
             <h4>ABOUT</h4>
-            <Link to="/about">About Us</Link>
-            <Link to="/contact">Contact Us</Link>
-            <p>Careers</p>
-            <p>Ganesh Stories</p>
+            <Link to="/info/about">About Us</Link>
+            <Link to="/info/contact">Contact Us</Link>
+            <Link to="/info/careers">Careers</Link>
+            <Link to="/info/stories">Ganesh Stories</Link>
           </div>
-
           <div className="footer-col">
             <h4>HELP</h4>
-<Link to="/info/about">About Us</Link>
-<Link to="/info/payments">Payments</Link>
-<Link to="/info/shipping">Shipping</Link>
+            <Link to="/info/payments">Payments</Link>
+            <Link to="/info/shipping">Shipping</Link>
           </div>
-
-<div className="footer-col">
-  <h4>ABOUT</h4>
-  <Link to="/info/about">About Us</Link>
-  <Link to="/info/contact">Contact Us</Link>
-  <Link to="/info/careers">Careers</Link>
-  <Link to="/info/stories">Ganesh Stories</Link>
-</div>
-
           <div className="footer-col">
             <h4>SOCIAL</h4>
             <p>Facebook</p>
             <p>Twitter</p>
             <p>YouTube</p>
-            <p>Instagram</p>
           </div>
-
           <div className="footer-col border-left">
             <h4>Mail Us:</h4>
             <p>GaneshShop Internet Private Limited,</p>
-            <p>Buildings Alyssa, Begonia & </p>
-            <p>Clove Embassy Tech Village,</p>
             <p>Nagpur, Maharashtra, India</p>
           </div>
         </div>
-
         <div className="footer-bottom">
-          <div className="footer-bottom-links">
-            <span>© 2026 GaneshShop.com</span>
-          </div>
-          <div className="payment-methods">
-
-          </div>
+           <span>© 2026 GaneshShop.com</span>
         </div>
       </footer>
     </div>
