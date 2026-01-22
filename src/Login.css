@@ -1,0 +1,141 @@
+.login-container {
+  height: 100vh;
+  background: #2874f0; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Navbar ke andar ke sabhi dropdowns aur containers ko transparent karein */
+/* ✅ 1. DROPDOWN VISIBILITY FIX ✅ */
+.user-nav-dropdown {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    cursor: pointer !important;
+    background: transparent !important; /* White box removal */
+    padding: 0 15px !important;
+}
+
+/* Jab dropdown par mouse le jayein tab menu dikhe */
+.user-nav-dropdown:hover .dropdown-links {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* ✅ 2. LOGOUT MENU STYLING ✅ */
+.dropdown-links {
+    display: none; /* Default hidden */
+    position: absolute !important;
+    top: 100% !important;
+    right: 0 !important;
+    background-color: #ffffff !important;
+    min-width: 180px !important;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2) !important;
+    border-radius: 2px !important;
+    z-index: 9999 !important; /* Sabse upar dikhne ke liye */
+    padding: 5px 0 !important;
+}
+
+.dropdown-links a, .dropdown-links button {
+    color: #212121 !important;
+    padding: 12px 16px !important;
+    text-decoration: none !important;
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
+    border: none !important;
+    background: none !important;
+    font-size: 14px !important;
+    cursor: pointer !important;
+}
+
+.dropdown-links a:hover, .dropdown-links button:hover {
+    background-color: #f1f3f6 !important;
+    color: #2874f0 !important;
+}
+
+.user-name {
+    color: white !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+}
+.user-name, 
+.login-name-container {
+    background: transparent !important;
+    color: white !important;
+}
+.bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+.one { width: 300px; height: 300px; top: -50px; left: -50px; }
+.two { width: 400px; height: 400px; bottom: -100px; right: -50px; }
+
+.login-box {
+  width: 750px;
+  height: 520px;
+  background: white;
+  display: flex;
+  border-radius: 8px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  z-index: 10;
+  overflow: hidden;
+}
+
+.login-left {
+  background: #2874f0;
+  width: 40%;
+  padding: 40px 33px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-left h2 { font-size: 28px; font-weight: 600; margin-bottom: 15px; }
+.login-left p { font-size: 18px; color: #dbdbdb; line-height: 150%; }
+.login-left img { width: 200px; margin-top: auto; align-self: center; }
+
+.login-right {
+  width: 60%;
+  padding: 56px 35px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 10px 0;
+  margin-bottom: 30px;
+  outline: none;
+  font-size: 16px;
+}
+
+.login-btn {
+  background: #fb641b; 
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+}
+
+.create-account {
+  margin-top: auto;
+  text-align: center;
+  color: #2874f0;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+}
