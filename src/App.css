@@ -70,6 +70,444 @@ body {
 
 
 
+
+
+
+
+/* ✅ 1. Header Fix: Login Right & Search Adjust */
+.nav-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 10px 15px !important;
+    background: #2874f0;
+}
+
+.logo-section { flex: 1; }
+
+.nav-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+.login-link-new {
+    background: white !important;
+    color: #2874f0 !important;
+    padding: 5px 15px !important;
+    border-radius: 2px !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+}
+
+/* ✅ 2. Mobile Search Bar Fix (Only on Home) */
+.mobile-search-bar {
+    background: #2874f0;
+    padding: 0 10px 10px 10px;
+}
+
+.m-search-box {
+    position: relative;
+    width: 100%;
+}
+
+.m-search-box input {
+    width: 100%;
+    padding: 8px 35px 8px 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+}
+
+.m-search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #2874f0;
+}
+
+/* ✅ 3. Login/Register Page Mobile Fix */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 10px !important;
+        min-height: 100vh !important;
+        background: white !important;
+    }
+
+    .login-box {
+        flex-direction: column !important;
+        width: 100% !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    .login-left {
+        display: none !important; /* Mobile par blue side hide taaki form pura dikhe */
+    }
+
+    .login-right {
+        width: 100% !important;
+        padding: 20px 10px !important;
+    }
+
+    .input-group input {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Product Grid 2 items */
+    .product-grid-vertical {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+    }
+}
+
+/* ✅ 4. Bottom Nav Fix */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ✅ Professional Mobile Header */
+.mobile-nav-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 10px 15px !important;
+    background: #2874f0;
+}
+
+.search-section-mobile-left {
+    position: relative;
+    flex: 1;
+    max-width: 60%;
+}
+
+.search-section-mobile-left input {
+    width: 100%;
+    padding: 8px 30px 8px 12px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+}
+
+.m-search-icon-inside {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #2874f0;
+}
+
+.nav-actions-mobile-right {
+    display: flex !important;
+    gap: 15px !important;
+    align-items: center !important;
+}
+
+.login-link-white-mobile {
+    background: white;
+    color: #2874f0;
+    padding: 5px 12px;
+    border-radius: 2px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.cart-link-white-mobile {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ✅ Product Page Mobile Fix */
+@media (max-width: 768px) {
+    .modal-main-grid { flex-direction: column !important; }
+    .thumbnail-track { display: flex !important; gap: 10px !important; margin-top: 10px !important; }
+    .thumbnail-track img { width: 60px !important; height: 60px !important; }
+    
+    .modal-cta-group { 
+        display: flex !important; 
+        flex-direction: column !important; 
+        gap: 10px !important; 
+        width: 100% !important; 
+    }
+    .btn-cart-premium, .btn-buy-premium { 
+        width: 100% !important; 
+        padding: 15px !important; 
+    }
+}
+/* ✅ 1. Professional Header: Search Left, Login Right */
+.mobile-nav-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 10px 15px !important;
+    background: #2874f0;
+}
+
+.search-section-mobile-left {
+    position: relative;
+    flex: 1;
+    max-width: 55%;
+}
+
+.search-section-mobile-left input {
+    width: 100%;
+    padding: 8px 30px 8px 10px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+}
+
+.m-search-icon-inside {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #2874f0;
+}
+
+/* ✅ 2. Dropdown Menu for Profile/Logout */
+.user-dropdown-container { position: relative; }
+.dropdown-trigger-btn {
+    background: white; color: #2874f0; border: none;
+    padding: 5px 12px; border-radius: 2px; font-weight: bold;
+    display: flex; align-items: center; gap: 5px; cursor: pointer;
+}
+.dropdown-menu-list {
+    position: absolute; top: 110%; right: 0; background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15); border-radius: 4px;
+    width: 150px; display: none; flex-direction: column; z-index: 5000;
+}
+.user-dropdown-container:hover .dropdown-menu-list { display: flex; }
+.dropdown-menu-list a, .logout-btn-drop {
+    padding: 10px 15px; text-decoration: none; color: #333; font-size: 14px; text-align: left;
+    border: none; background: none; width: 100%; cursor: pointer;
+}
+.dropdown-menu-list a:hover { background: #f1f3f6; }
+
+/* ✅ 3. Mobile Product View Fix */
+@media (max-width: 768px) {
+    .modal-main-grid { flex-direction: column !important; }
+    .thumbnail-track { display: flex !important; gap: 10px !important; overflow-x: auto; }
+    .thumb-item { width: 50px !important; height: 50px !important; border: 1px solid #ddd; }
+    .modal-cta-group.stacked-mobile {
+        display: flex !important; flex-direction: column !important;
+        gap: 10px !important; width: 100% !important;
+    }
+    .btn-cart-premium, .btn-buy-premium { width: 100% !important; padding: 15px !important; }
+}
+
+.bottom-nav { position: fixed; bottom: 0; width: 100%; background: white; display: flex; justify-content: space-around; padding: 10px 0; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); z-index: 1000; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ✅ 1. Search Suggestion with Image */
+.suggestions-box-mobile {
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: white; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 6000; max-height: 300px; overflow-y: auto;
+}
+.suggestion-item {
+    display: flex; align-items: center; gap: 12px; padding: 10px; border-bottom: 1px solid #f1f3f6;
+}
+.sugg-img-mobile { width: 40px; height: 40px; object-fit: contain; }
+
+/* ✅ 2. Admin Edit/Delete Icons on Cards */
+.admin-actions-overlay {
+    position: absolute; top: 10px; right: 10px; display: flex; gap: 8px; z-index: 100;
+}
+.edit-icon-btn, .delete-icon-btn {
+    background: white; border: none; padding: 6px; border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2); cursor: pointer; display: flex;
+}
+.edit-icon-btn { color: #2874f0; }
+.delete-icon-btn { color: #ff4d4d; }
+
+/* ✅ 3. Simple Header Title */
+.page-header-simple { width: 100%; text-align: center; color: white; font-weight: bold; font-size: 18px; }
+
+/* ✅ 4. Mobile Button Stacking */
+@media (max-width: 768px) {
+    .modal-cta-group.stacked-mobile { display: flex !important; flex-direction: column !important; gap: 10px !important; }
+    .btn-cart-premium, .btn-buy-premium { width: 100% !important; padding: 12px !important; }
+}
+
+/* ✅ 1. Search Suggestions with Images */
+.suggestions-box-mobile {
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: white; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 6000; max-height: 300px; overflow-y: auto;
+}
+.suggestion-item {
+    display: flex; align-items: center; gap: 12px; padding: 10px; border-bottom: 1px solid #f1f3f6; color: #333;
+}
+.sugg-img-mobile { width: 35px; height: 35px; object-fit: contain; }
+
+/* ✅ 2. Admin Actions Overlay */
+.admin-actions-overlay {
+    position: absolute; top: 10px; right: 10px; display: flex; gap: 8px; z-index: 100;
+}
+.edit-icon-btn, .delete-icon-btn {
+    background: white; border: none; padding: 6px; border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2); cursor: pointer; display: flex;
+}
+.edit-icon-btn { color: #2874f0; }
+.delete-icon-btn { color: #ff4d4d; }
+
+/* ✅ 3. Responsive Footer Grid */
+.footer-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+}
+.footer-col h4 { margin-bottom: 15px; color: #878787; font-size: 14px; }
+.footer-col a { display: block; color: white; text-decoration: none; font-size: 12px; margin-bottom: 8px; }
+
+@media (max-width: 768px) {
+    .footer-inner { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    .footer-col.border-left { border-left: none; border-top: 1px solid #454d5e; padding-top: 20px; grid-column: span 2; }
+}
+/* ✅ 1. Search Suggestion with Images */
+.suggestions-box-mobile {
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: white; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 6000; max-height: 300px; overflow-y: auto;
+}
+.suggestion-item {
+    display: flex; align-items: center; gap: 12px; padding: 10px; border-bottom: 1px solid #f1f3f6; color: #333;
+}
+.sugg-img-mobile { width: 35px; height: 35px; object-fit: contain; }
+
+/* ✅ 2. Admin Actions Overlay (Icon Buttons) */
+.admin-actions-overlay {
+    position: absolute; top: 10px; right: 10px; display: flex; gap: 8px; z-index: 100;
+}
+.edit-icon-btn, .delete-icon-btn {
+    background: white; border: none; padding: 6px; border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2); cursor: pointer; display: flex;
+}
+.edit-icon-btn { color: #2874f0; }
+.delete-icon-btn { color: #ff4d4d; }
+
+/* ✅ 3. Responsive Footer Grid */
+.footer-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px; padding: 40px 20px; background: #172337;
+}
+.footer-col h4 { margin-bottom: 15px; color: #878787; font-size: 14px; text-transform: uppercase; }
+.footer-col a, .footer-col p { display: block; color: white; text-decoration: none; font-size: 12px; margin-bottom: 8px; }
+
+@media (max-width: 768px) {
+    .footer-inner { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    .footer-col.border-left { border-left: none; border-top: 1px solid #454d5e; padding-top: 20px; grid-column: span 2; }
+}
+
+/* ✅ 4. Mobile Login/Register Responsive fix */
+@media (max-width: 768px) {
+    .login-container, .register-container { padding: 0 !important; min-height: 100vh !important; background: #fff !important; }
+    .login-box { flex-direction: column !important; width: 100% !important; border: none !important; box-shadow: none !important; }
+    .login-left { display: none !important; }
+}
+/* ✅ 1. Dropdown Mobile Fixed Alignment */
+.user-dropdown-container { position: relative; }
+.dropdown-menu-list {
+    position: absolute; top: 110%; right: 0; background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); border-radius: 4px;
+    width: 140px; display: none; flex-direction: column; z-index: 9999;
+}
+.dropdown-menu-list.show-drop { display: flex !important; }
+
+/* ✅ 2. Search Box with Product Images */
+.suggestions-box-mobile {
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: white; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 6000; max-height: 280px; overflow-y: auto;
+}
+.suggestion-item { display: flex; align-items: center; gap: 10px; padding: 10px; border-bottom: 1px solid #eee; }
+.sugg-img-mobile { width: 30px; height: 30px; object-fit: contain; }
+
+/* ✅ 3. Admin Buttons on Card */
+.admin-actions-overlay { position: absolute; top: 8px; right: 8px; display: flex; gap: 6px; z-index: 100; }
+.edit-icon-btn, .delete-icon-btn { background: white; border: none; padding: 5px; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.2); cursor: pointer; display: flex; }
+.delete-icon-btn { color: #ff4d4d; }
+
+/* ✅ 4. Modal Buttons Mobile (Stacked) */
+@media (max-width: 768px) {
+    .modal-cta-group.stacked-mobile { display: flex !important; flex-direction: column !important; gap: 10px !important; }
+    .btn-cart-premium, .btn-buy-premium { width: 100% !important; padding: 12px !important; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ✅ Double Search Bar Removal Logic */
 @media (min-width: 769px) {
     .mobile-search-bar { display: none !important; } /* Desktop par mobile search hide */
