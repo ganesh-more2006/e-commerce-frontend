@@ -69,19 +69,6 @@ body {
 }
 
 
-/* ✅ Login Right Side and Search Fix */
-.nav-container {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-}
-
-.nav-actions {
-    display: flex !important;
-    align-items: center !important;
-    gap: 15px !important;
-    margin-left: auto !important; /* Force Login to Right */
-}
 
 /* ✅ Double Search Bar Removal Logic */
 @media (min-width: 769px) {
