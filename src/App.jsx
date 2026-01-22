@@ -252,6 +252,7 @@ function App() {
             </div>
           </div>
           
+          {/* ✅ Fixed Search logic: Only on Home Page */}
           {isHomePage && (
             <div className="search-section desktop-search" style={{position: 'relative'}}>
               <input type="text" placeholder="Search for products, brands and more" value={searchQuery} onChange={handleSearchChange} />
@@ -274,9 +275,9 @@ function App() {
               <div className="user-nav-dropdown">
                 <span className="user-name">Hi, {user.name.split(' ')[0]} ▼</span>
                 <div className="dropdown-links">
-                   <Link to="/profile">My Profile</Link>
-                   <Link to="/history">My Orders</Link>
-                   {isAdmin && <Link to="/seller" style={{color: 'red'}}>Admin Panel</Link>}
+                   <Link to="/profile">Profile</Link>
+                   <Link to="/history">Orders</Link>
+                   {isAdmin && <Link to="/seller" style={{color: 'red'}}>Admin</Link>}
                    <button onClick={handleLogout}>Logout</button>
                 </div>
               </div>
@@ -311,6 +312,7 @@ function App() {
         </Routes>
       </main>
 
+      {/* ✅ Home Icon at the first place in Bottom Nav */}
       <nav className="bottom-nav">
         <div className={`nav-item ${location.pathname === "/" ? "active" : ""}`} onClick={() => navigate("/")}>
           <FaHome />
@@ -347,13 +349,12 @@ function App() {
           <div className="footer-col">
             <h4>SOCIAL</h4>
             <p>Facebook</p>
-            <p>Twitter</p>
-            <p>YouTube</p>
+            <p>Instagram</p>
           </div>
           <div className="footer-col border-left">
             <h4>Mail Us:</h4>
-            <p>GaneshShop Internet Private Limited,</p>
-            <p>Nagpur, Maharashtra, India</p>
+            <p>GaneshShop Pvt Ltd,</p>
+            <p>Nagpur, MH, India</p>
           </div>
         </div>
         <div className="footer-bottom">
